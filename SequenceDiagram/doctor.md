@@ -1,6 +1,9 @@
 [](
     お医者さん
 )
+---
+title:管理画面の導線
+---
 ```mermaid
 sequenceDiagram
     participant ログイン画面

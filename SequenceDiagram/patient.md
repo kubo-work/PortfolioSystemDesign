@@ -1,6 +1,9 @@
 [](
     患者さん
 )
+---
+title:フロント画面の導線
+---
 ```mermaid
 sequenceDiagram
     participant ログイン画面
