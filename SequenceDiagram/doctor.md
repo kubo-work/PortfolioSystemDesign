@@ -1,10 +1,10 @@
 [](
     お医者さん
 )
----
-title:管理画面の導線
----
 ```mermaid
+---
+title: 管理画面の導線
+---
 sequenceDiagram
     participant ログイン画面
     participant ダッシュボード

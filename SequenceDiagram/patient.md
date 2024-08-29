@@ -1,10 +1,10 @@
 [](
     患者さん
 )
+```mermaid
 ---
 title:フロント画面の導線
 ---
-```mermaid
 sequenceDiagram
     participant ログイン画面
     participant 患者メニュー
