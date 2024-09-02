@@ -1,7 +1,7 @@
 ```mermaid
 erDiagram
     users {
-        int id PK "ID" %% auto increment
+        int id PK "ID"
         string name "名前"
         string tell "電話番号"
         string email "メールアドレス"
@@ -13,7 +13,7 @@ erDiagram
     }
 
     medical_history{
-        int id PK "ID" %% auto increment
+        int id PK "ID" 
         int user_id FK "ユーザーID"
         text content "診察内容"
         text condition "容態"
@@ -25,7 +25,7 @@ erDiagram
     }
 
     admin_users{
-        int id PK "ID"  %% auto increment
+        int id PK "ID" 
         string name "名前"
         string password "パスワード"
         string email "メールアドレス"
