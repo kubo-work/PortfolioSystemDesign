@@ -1,6 +1,6 @@
 ```mermaid
 erDiagram
-    users {
+    patients {
         int id PK "ID"
         string name "名前"
         string tell "電話番号"
@@ -12,9 +12,10 @@ erDiagram
         timestamp last_hospital_visit_at "最新来院日"
     }
 
-    medical_history{
+    medical_records{
         int id PK "ID" 
         int user_id FK "ユーザーID"
+        int doctors_id FK "お医者さんID"
         text content "診察内容"
         text condition "容態"
         text doctor_memo "お医者さん専用"
@@ -24,7 +25,7 @@ erDiagram
         timestamp deleted_flag "削除"
     }
 
-    admin_users{
+    doctors{
         int id PK "ID" 
         string name "名前"
         string password "パスワード"
@@ -33,5 +34,6 @@ erDiagram
         timestamp update_at "更新日" 
     }
 
-    users ||--o{ medical_history: ""
+    users ||--o{ medical_records: ""
+    doctors ||--o{ medical_records: ""
 ```
