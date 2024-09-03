@@ -18,8 +18,6 @@ erDiagram
         int id PK "ID" 
         int patient_id FK "患者さんID"
         int doctor_id FK "お医者さんID"
-        int category_id FK "処置"
-        text condition "容態"
         text doctor_memo "お医者さん専用メモ"
         timestamp examination_at "診察日"
         timestamp created_at "作成日"
@@ -33,6 +31,11 @@ erDiagram
         string treatment "処置"
     }
 
+    medical_categories {
+        int medical_record_id FK "診療ID"
+        int category_id FK "カテゴリID"
+    }
+
     doctors{
         int id PK "ID" 
         string name "名前"
@@ -44,5 +47,6 @@ erDiagram
 
     patients ||--o{ medical_records: ""
     doctors ||--o{ medical_records: ""
-    categories ||--o{ medical_records: ""
+    medical_records ||--o{ medical_categories: ""
+    categories ||--o{ medical_categories: ""
 ```
