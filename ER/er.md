@@ -3,7 +3,7 @@ erDiagram
     patients {
         int id PK "ID"
         string name "名前"
-        int sex "性別"
+        enum sex "性別"
         string tell "電話番号"
         string address "住所"
         string email "メールアドレス"
@@ -18,7 +18,7 @@ erDiagram
         int id PK "ID" 
         int patient_id FK "患者さんID"
         int doctor_id FK "お医者さんID"
-        text content "診察内容(カテゴリ)"
+        int category_id FK "処置"
         text condition "容態"
         text doctor_memo "お医者さん専用メモ"
         timestamp examination_at "診察日"
@@ -28,7 +28,10 @@ erDiagram
     }
 
     %% 診察（施術内容をカテゴリ化してテーブル）
-    
+    categories{
+        int id PK "ID" 
+        string treatment "処置"
+    }
 
     doctors{
         int id PK "ID" 
@@ -41,4 +44,5 @@ erDiagram
 
     patients ||--o{ medical_records: ""
     doctors ||--o{ medical_records: ""
+    categories ||--o{ medical_records: ""
 ```
