@@ -32,6 +32,7 @@ erDiagram
     }
 
     medical_categories {
+        int id PK "ID"
         int medical_record_id FK "診療ID"
         int category_id FK "カテゴリID"
     }
