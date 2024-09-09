@@ -29,12 +29,16 @@ erDiagram
     categories{
         int id PK "ID" 
         string treatment "処置"
+        timestamp created_at "作成日"
+        timestamp updated_at "更新日"
     }
 
     medical_categories {
         int id PK "ID"
         int medical_record_id FK "診療ID"
         int category_id FK "カテゴリID"
+        timestamp created_at "作成日"
+        timestamp updated_at "更新日"
     }
 
     doctors{
